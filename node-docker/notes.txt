@@ -1,0 +1,5 @@
+Create and build nodejs app
+
+docker build -t nodeapp .
+
+docker run--name nodeapp -p 8081:8888 nodeapp
