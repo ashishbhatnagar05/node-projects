@@ -1,0 +1,46 @@
+https://www.youtube.com/watch?v=1acKGwbby-E
+
+TCP
+
+telnet 127.0.0.1 4444
+telnet localhost 4444
+
+we will get "Hello"
+
+UDP
+
+echo 'hi' | nc -w1 -u localhost 5555
+
+
+root@mikasa:/home/mikasa# sudo ss -tunlp
+Netid        State         Recv-Q        Send-Q                   Local Address:Port                 Peer Address:Port        Process                                                         
+udp          UNCONN        0             0                          10.27.175.1:53                        0.0.0.0:*            users:(("dnsmasq",pid=2801,fd=6))                              
+udp          UNCONN        0             0                         192.168.42.1:53                        0.0.0.0:*            users:(("dnsmasq",pid=1431,fd=5))                              
+udp          UNCONN        0             0                        192.168.122.1:53                        0.0.0.0:*            users:(("dnsmasq",pid=1357,fd=5))                              
+udp          UNCONN        0             0                        127.0.0.53%lo:53                        0.0.0.0:*            users:(("systemd-resolve",pid=773,fd=12))                      
+udp          UNCONN        0             0                    0.0.0.0%mpqemubr0:67                        0.0.0.0:*            users:(("dnsmasq",pid=2801,fd=4))                              
+udp          UNCONN        0             0                       0.0.0.0%virbr1:67                        0.0.0.0:*            users:(("dnsmasq",pid=1431,fd=3))                              
+udp          UNCONN        0             0                       0.0.0.0%virbr0:67                        0.0.0.0:*            users:(("dnsmasq",pid=1357,fd=3))                              
+udp          UNCONN        0             0                              0.0.0.0:631                       0.0.0.0:*            users:(("cups-browsed",pid=1140,fd=7))                         
+udp          UNCONN        0             0                              0.0.0.0:33496                     0.0.0.0:*            users:(("avahi-daemon",pid=883,fd=14))                         
+udp          UNCONN        0             0                              0.0.0.0:5353                      0.0.0.0:*            users:(("avahi-daemon",pid=883,fd=12))                         
+udp          UNCONN        0             0                              0.0.0.0:5555                      0.0.0.0:*            users:(("node",pid=29952,fd=17))                               
+udp          UNCONN        0             0                                 [::]:48351                        [::]:*            users:(("avahi-daemon",pid=883,fd=15))                         
+udp          UNCONN        0             0                                 [::]:5353                         [::]:*            users:(("avahi-daemon",pid=883,fd=13))                         
+tcp          LISTEN        0             32                         10.27.175.1:53                        0.0.0.0:*            users:(("dnsmasq",pid=2801,fd=7))                              
+tcp          LISTEN        0             32                        192.168.42.1:53                        0.0.0.0:*            users:(("dnsmasq",pid=1431,fd=6))                              
+tcp          LISTEN        0             32                       192.168.122.1:53                        0.0.0.0:*            users:(("dnsmasq",pid=1357,fd=6))                              
+tcp          LISTEN        0             4096                     127.0.0.53%lo:53                        0.0.0.0:*            users:(("systemd-resolve",pid=773,fd=13))                      
+tcp          LISTEN        0             128                            0.0.0.0:22                        0.0.0.0:*            users:(("sshd",pid=1091,fd=3))                                 
+tcp          LISTEN        0             128                          127.0.0.1:631                       0.0.0.0:*            users:(("cupsd",pid=1129,fd=7))                                
+tcp          LISTEN        0             244                          127.0.0.1:5432                      0.0.0.0:*            users:(("postgres",pid=1195,fd=5))                             
+tcp          LISTEN        0             5                            127.0.0.1:61209                     0.0.0.0:*            users:(("glances",pid=1031,fd=4))                              
+tcp          LISTEN        0             4096                           0.0.0.0:9000                      0.0.0.0:*            users:(("docker-proxy",pid=1744,fd=4))                         
+tcp          LISTEN        0             511                            0.0.0.0:80                        0.0.0.0:*            users:(("nginx",pid=1092,fd=6),("nginx",pid=1090,fd=6))        
+tcp          LISTEN        0             128                               [::]:22                           [::]:*            users:(("sshd",pid=1091,fd=4))                                 
+tcp          LISTEN        0             2                                [::1]:3350                         [::]:*            users:(("xrdp-sesman",pid=1073,fd=7))                          
+tcp          LISTEN        0             128                              [::1]:631                          [::]:*            users:(("cupsd",pid=1129,fd=6))                                
+tcp          LISTEN        0             511                                  *:4444                            *:*            users:(("node",pid=28748,fd=18))                               
+tcp          LISTEN        0             2                                    *:3389                            *:*            users:(("xrdp",pid=1127,fd=11))                                
+tcp          LISTEN        0             4096                              [::]:9000                         [::]:*            users:(("docker-proxy",pid=1751,fd=4))                         
+root@mikasa:/home/mikasa# 
