@@ -1,0 +1,8 @@
+https://www.youtube.com/watch?v=USrMdBF0zcg
+
+execute below to create cert in cert folder
+openssl genrsa -out key.pem
+
+openssl req -new -key key.pem csr.pem
+
+openssl x509 -req -days 30 -in csr.pem -signkey key.pem -out cert.pem
