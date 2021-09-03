@@ -1,0 +1,3 @@
+need to change the respective value of running mjs in launch.json
+need to have all the dependencies installed like pg,bcrypt in the system using npm 
+create.sql can be used to create DB
